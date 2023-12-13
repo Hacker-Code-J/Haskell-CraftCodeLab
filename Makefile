@@ -1,20 +1,32 @@
-# Define the Haskell compiler
-HASKELL_COMPILER = ghc
+# Makefile for Haskell DLP Decoder Project
 
-# Define the source files and their corresponding output binaries
-SOURCES = map_example.hs
-BINARIES = $(SOURCES:.hs=)
+# Compiler
+HC = ghc
 
-# Default target to build all binaries
-all: $(BINARIES)
+# Compiler flags
+HFLAGS = -O2
 
-# Rule to build Haskell binaries
-%: %.hs
-	$(HASKELL_COMPILER) -o $@ $<
+# Source files
+SOURCES = DLPDecoder.hs Main.hs
 
-# Clean target to remove binaries and intermediate files
+# Main Haskell file
+MAIN = Main.hs
+
+# Binary output
+EXECUTABLE = DLPDecoder
+
+# Default target
+all: $(EXECUTABLE)
+
+# Rule for building the executable
+$(EXECUTABLE): $(SOURCES)
+	$(HC) $(HFLAGS) $(MAIN) -o $(EXECUTABLE)
+
+# Clean up
 clean:
-	rm -f $(BINARIES) *.hi *.o
+	rm -f *.o *.hi $(EXECUTABLE)
 
-# Define phony targets
+rebuild: clean all
+
+# Phony targets
 .PHONY: all clean
