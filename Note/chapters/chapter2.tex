@@ -1,0 +1,62 @@
+\chapter{Basic Haskell Programming}
+
+\section{Basic Syntax of Haskell}
+
+Haskell's syntax is distinct and elegant, characterized by its conciseness and expressiveness. This section provides an overview of the basic syntax elements in Haskell.
+
+\subsection{Function Definition}
+\begin{itemize}
+	\item Functions are defined with a name, parameters, an equals sign, and the function body.
+	\item Example: \texttt{add x y = x + y} defines a function \texttt{add} that takes two parameters and returns their sum.
+\end{itemize}
+
+\subsection{Data Types}
+\begin{itemize}
+	\item Basic data types include \texttt{Int}, \texttt{Float}, \texttt{Char}, and \texttt{Bool}.
+	\item Example: \texttt{x :: Int} declares that \texttt{x} is an integer.
+\end{itemize}
+
+\subsection{Type Declarations}
+\begin{itemize}
+	\item Type declarations specify the type of a function.
+	\item Example: \texttt{add :: Int -> Int -> Int} specifies that \texttt{add} takes two integers and returns an integer.
+\end{itemize}
+
+\subsection{Lists}
+\begin{itemize}
+	\item Lists are a fundamental data structure, denoted by square brackets.
+	\item Example: \texttt{[1, 2, 3]} represents a list of integers.
+\end{itemize}
+
+\subsection{Tuples}
+\begin{itemize}
+	\item Tuples are collections of different types, denoted by parentheses.
+	\item Example: \texttt{(1, "Hello")} is a tuple containing an integer and a string.
+\end{itemize}
+
+\subsection{Pattern Matching}
+\begin{itemize}
+	\item Pattern matching allows for deconstructing and matching data structures.
+	\item Example: \texttt{sum [x] = x; sum (x:xs) = x + sum xs} defines a sum function using pattern matching on lists.
+\end{itemize}
+
+\subsection{Control Structures}
+\begin{itemize}
+	\item Common control structures include \texttt{if-then-else} and \texttt{case} expressions.
+	\item Example: \texttt{if x > 0 then "Positive" else "Non-positive"}.
+\end{itemize}
+
+\subsection{Let and Where Bindings}
+\begin{itemize}
+	\item \texttt{let} and \texttt{where} bindings allow for local definitions within functions.
+	\item Example: \texttt{sumSquare x y = square x + square y where square z = z * z}.
+\end{itemize}
+
+\subsection{Lambdas}
+\begin{itemize}
+	\item Anonymous functions, or lambdas, are defined using the backslash (\texttt{\textbackslash}) followed by parameters, an arrow, and the function body.
+	\item Example: \texttt{\textbackslash x -> x * x} represents a function that squares its input.
+\end{itemize}
+
+\section{Conclusion}
+Understanding Haskell's syntax is the first step in harnessing the full potential of this powerful functional programming language. The clarity and expressiveness of Haskell's syntax allow for writing concise and robust code.

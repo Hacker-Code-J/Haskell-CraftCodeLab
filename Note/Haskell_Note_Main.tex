@@ -1,0 +1,97 @@
+\documentclass[12pt,openany]{book}
+
+% Colors
+\usepackage[dvipsnames]{xcolor}
+\definecolor{titleblue}{RGB}{0,53,128}
+\definecolor{chaptergray}{RGB}{140,140,140}
+\definecolor{sectiongray}{RGB}{180,180,180}
+
+\definecolor{thmcolor}{RGB}{231, 76, 60}
+\definecolor{defcolor}{RGB}{52, 152, 219}
+\definecolor{lemcolor}{RGB}{155, 89, 182}
+\definecolor{corcolor}{RGB}{46, 204, 113}
+\definecolor{procolor}{RGB}{241, 196, 15}
+\definecolor{execolor}{RGB}{90, 128, 127}
+
+% Fonts
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newpxtext,newpxmath}
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\color{titleblue}\mdseries}
+
+% Page layout
+\usepackage{geometry}
+\geometry{a4paper,left=.8in,right=.6in,top=.75in,bottom=1in,heightrounded}
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO]{\nouppercase{\rightmark}}
+\fancyhead[RE]{\nouppercase{\leftmark}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Chapter formatting
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\normalfont\sffamily\Huge\bfseries\color{titleblue}}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titleformat{\section}
+{\normalfont\sffamily\Large\bfseries\color{titleblue!100!gray}}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\sffamily\large\bfseries\color{titleblue!75!gray}}{\thesubsection}{1em}{}
+
+% Table of contents formatting
+\usepackage{tocloft}
+\renewcommand{\cftchapfont}{\sffamily\color{titleblue}\bfseries}
+\renewcommand{\cftsecfont}{\sffamily\color{chaptergray}}
+\renewcommand{\cftsubsecfont}{\sffamily\color{sectiongray}}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, shadows}
+
+% Preamble with packages, custom commands, etc.
+\usepackage{lipsum}  % Just for generating text
+
+\begin{document}
+	
+	% Title page
+	\begin{titlepage}
+		\begin{center}
+			{\Huge\textsf{\textbf{Haskell - CraftCodeLab}}\par}
+			{\Large\textsf{\textbf{- Mastering the Art of Haskell Programming -}}\par}
+			\vspace{0.5in}
+			{\Large {Ji Yong-Hyeon}\par}
+			\vspace{1in}
+			\includegraphics[scale=.35]{haskell_logo.png}\par
+			\vspace{1in}
+			{\large\bf \textsf{Department of Information Security, Cryptology, and Mathematics}\par}
+			{\textsf{College of Science and Technology}\par}
+			{\textsf{Kookmin University}\par}
+			\vspace{.25in}
+			{\large \textsf{\today}\par}
+		\end{center}
+	\end{titlepage}
+	
+	\frontmatter
+	\input{front/acknowledgements.tex}
+	\input{front/abstract.tex}
+	
+	\newpage
+	\tableofcontents
+	
+	\newpage
+	\mainmatter
+	\input{chapters/chapter1.tex}
+	\input{chapters/chapter2.tex}
+	% Include more chapters as needed
+	
+	\appendix
+	\input{appendices/appendixA.tex}
+	\input{appendices/appendixB.tex}
+	
+	\backmatter
+	% Bibliography, index, etc.
+	
+\end{document}
